@@ -5,60 +5,77 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class CalculatorController {
-
+public class CalculatorController implements Display  {
 
     @FXML
     private TextField Display;
-    private boolean LastButtonWasDigit = false;
 
+    private Calculator calculator;
 
-    public void ClearClick(ActionEvent actionEvent) {
-        setDisplayNumber("0");
-        LastButtonWasDigit=false;
+    public CalculatorController(Calculator calculator) {
+        this.calculator = calculator;
     }
+
+    public CalculatorController() {
+        calculator = new Calculator(this);
+    }
+
+
+
+    @Override
+    public String getDisplayNumber() {
+        return Display.getText();
+    }
+
+    @Override
+    public void setDisplayNumber(String displayNumber) {
+        Display.setText(displayNumber);
+    }
+    public void ClearClick(ActionEvent actionEvent) {
+        calculator.clear();
+    }
+
+
 
     public void PercentClick(ActionEvent actionEvent) {
     }
 
     public void SquareRootClick(ActionEvent actionEvent) {
-        double number = getNumber();
-        number=Math.sqrt(number);
-        NumberToString(number);
+        calculator.sqrtroot();
     }
+
+
 
     public void XSquaredClick(ActionEvent actionEvent) {
-        double number = getNumber();
-        number*=number;
-        NumberToString(number);
+        calculator.xsquared();
     }
 
+
+
     public void DerivClick(ActionEvent actionEvent) {
-        double number = 1/getNumber();
-        NumberToString(number);
+        calculator.deriv();
     }
+
 
     public void CorrectionClick(ActionEvent actionEvent) {
     }
 
     public void BackspaceClick(ActionEvent actionEvent) {
-        System.out.println("Button backspace click");
+
     }
 
     public void DivisionClick(ActionEvent actionEvent) {
-        double number = getNumber();
-        
+
+
     }
 
     public void ButtonDigitClick(ActionEvent actionEvent) {
         Button button = (Button) actionEvent.getSource();
         String digit = button.getText();
-        if (LastButtonWasDigit)
-            setDisplayNumber(getDisplayNumber()+digit);
-        else
-            setDisplayNumber(digit);
-        LastButtonWasDigit=true;
+        calculator.digit(digit);
     }
+
+
 
     public void MultiplicationClick(ActionEvent actionEvent) {
     }
@@ -70,33 +87,15 @@ public class CalculatorController {
     }
 
     public void PlusMinusClick(ActionEvent actionEvent) {
-        double number = getNumber()*-1;
-        NumberToString(number);
+        calculator.plusminus();
     }
     public void PoindClick(ActionEvent actionEvent) {
-        if(!getDisplayNumber().contains(","))
-            setDisplayNumber(getDisplayNumber()+",");
-        LastButtonWasDigit=true;
+        calculator.comma();
 
     }
+
+
 
     public void EqualClick(ActionEvent actionEvent) {
     }
-
-
-    private double getNumber() {
-        return Double.parseDouble(getDisplayNumber());
-    }
-
-    private void NumberToString(double number) {
-        setDisplayNumber(String.valueOf(number));
-    }
-
-    private String getDisplayNumber() {
-        return Display.getText();
-    }
-
-    private void setDisplayNumber(String displayNumber) {
-        Display.setText(displayNumber);
-    }
-} 
+}
