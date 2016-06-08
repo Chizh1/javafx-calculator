@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<GridPane alignment="CENTER" hgap="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="166.0" vgap="2.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.calculator.CalculatorController">
+   <rowConstraints>
+      <RowConstraints maxHeight="47.0" minHeight="30.0" prefHeight="46.0" />
+      <RowConstraints maxHeight="36.0" minHeight="17.0" prefHeight="34.0" />
+      <RowConstraints maxHeight="36.0" minHeight="17.0" prefHeight="34.0" />
+      <RowConstraints maxHeight="36.0" minHeight="17.0" prefHeight="34.0" />
+      <RowConstraints maxHeight="36.0" minHeight="17.0" prefHeight="34.0" />
+      <RowConstraints maxHeight="36.0" minHeight="17.0" prefHeight="34.0" />
+      <RowConstraints maxHeight="36.0" minHeight="17.0" prefHeight="34.0" />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints maxWidth="95.0" minWidth="10.0" prefWidth="40.0" />
+      <ColumnConstraints maxWidth="95.0" minWidth="10.0" prefWidth="40.0" />
+      <ColumnConstraints maxWidth="95.0" minWidth="10.0" prefWidth="40.0" />
+      <ColumnConstraints maxWidth="95.0" minWidth="10.0" prefWidth="40.0" />
+   </columnConstraints>
+   <children>
+      <TextField fx:id="Display" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="171.0" text="0" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="0"/>
+
+      <Button fx:id="Percent" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="\%" GridPane.columnIndex="0" GridPane.rowIndex="1" onAction="#PercentClick"/>
+      <Button fx:id="SquareRoot" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="√" GridPane.columnIndex="1" GridPane.rowIndex="1" onAction="#SquareRootClick" />
+      <Button fx:id="XSquared" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="х²" GridPane.columnIndex="2" GridPane.rowIndex="1" onAction="#XSquaredClick"/>
+      <Button fx:id="Deriv" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="1/x" GridPane.columnIndex="3" GridPane.rowIndex="1" onAction="#DerivClick"/>
+      <Button fx:id="Correction" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="CE" GridPane.columnIndex="0" GridPane.rowIndex="2" onAction="#CorrectionClick"/>
+      <Button fx:id="Clear" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="C" GridPane.columnIndex="1" GridPane.rowIndex="2" onAction="#ClearClick"/>
+      <Button fx:id="Backspace" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="⌫" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" onAction="#BackspaceClick"/>
+      <Button fx:id="Division" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="÷ " GridPane.columnIndex="3" GridPane.rowIndex="2" onAction="#DivisionClick"/>
+      <Button fx:id="Seven" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="7" GridPane.columnIndex="0" GridPane.rowIndex="3" onAction="#ButtonDigitClick"/>
+      <Button fx:id="Eight" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="8" GridPane.columnIndex="1" GridPane.rowIndex="3" onAction="#ButtonDigitClick"/>
+      <Button fx:id="Nine" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="9" GridPane.columnIndex="2" GridPane.rowIndex="3" onAction="#ButtonDigitClick"/>
+      <Button fx:id="Multiplication" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="× " GridPane.columnIndex="3" GridPane.rowIndex="3" onAction="#MultiplicationClick"/>
+      <Button fx:id="Four" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="4" GridPane.columnIndex="0" GridPane.rowIndex="4" onAction="#ButtonDigitClick"/>
+      <Button fx:id="Five" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="5" GridPane.columnIndex="1" GridPane.rowIndex="4" onAction="#ButtonDigitClick"/>
+      <Button fx:id="Six" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="6" GridPane.columnIndex="2" GridPane.rowIndex="4" onAction="#ButtonDigitClick"/>
+      <Button fx:id="Minus" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="-" GridPane.columnIndex="3" GridPane.rowIndex="4" onAction="#MinusClick"/>
+      <Button fx:id="One" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="1" GridPane.columnIndex="0" GridPane.rowIndex="5" onAction="#ButtonDigitClick"/>
+      <Button fx:id="Two" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="2" GridPane.columnIndex="1" GridPane.rowIndex="5" onAction="#ButtonDigitClick"/>
+      <Button fx:id="Three" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="3" GridPane.columnIndex="2" GridPane.rowIndex="5" onAction="#ButtonDigitClick"/>
+      <Button fx:id="Plus" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="+" GridPane.columnIndex="3" GridPane.rowIndex="5" onAction="#PlusClick"/>
+      <Button fx:id="PlusMinus" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="± " GridPane.columnIndex="0" GridPane.rowIndex="6" onAction="#PlusMinusClick"/>
+      <Button fx:id="Zero" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="0" GridPane.columnIndex="1" GridPane.rowIndex="6" onAction="#ButtonDigitClick"/>
+      <Button fx:id="Poind" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="," GridPane.columnIndex="2" GridPane.rowIndex="6" onAction="#PoindClick"/>
+      <Button fx:id="Equal" minHeight="35.0" minWidth="40.0" mnemonicParsing="false" text="=" GridPane.columnIndex="3" GridPane.rowIndex="6" onAction="#EqualClick"/>
+   </children>
+</GridPane>
